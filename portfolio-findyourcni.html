@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindYourCNI - Portfolio L'ange Beluis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="portfolio-header">
+        <p class="portfolio-header-title">L'ange Beluis</p>
+        <a class="contact-button contact-button-portfolio" href="mailto:contact@beluis.com">ME CONTACTER</a>
+    </div>
+
+    <!-- SECTION GRISE TITRE -->
+    <section class="section section-grise1" style="padding-top:20px">
+        <a class="portfolio-back" href="index.html">Retour</a>
+        <div class="separateur" style="margin-top:-12px;"></div>
+        <h1 class="portfolio">Portfolio</h1>
+        <h2 class="portfolio">FindYourCNI - Application collaborative de recherche de CNI</h2>
+    </section>
+
+    <!-- SECTION CONTENU -->
+    <section class="section">
+        <div class="texte-avec-ligne-verticale">
+            <p>
+J'ai conçu et développé l'application mobile FindYourCNI pour aider les citoyens à retrouver leurs documents d'identité perdus de manière collaborative et sécurisée.
+<br><br>
+Les utilisateurs peuvent y déclarer une CNI retrouvée dans la rue, ou chercher leur carte perdue à travers une plateforme optimisée avec Firebase et intégrée aux services cloud de Google. Le projet met en œuvre des fonctionnalités avancées comme la vérification d'images, la géolocalisation, les notifications push intelligentes pour le matching des cartes, et une architecture cloud scalable.
+<br><br>
+Mon rôle a couvert l'ensemble du cycle de vie du produit, de la conception UI/UX à l'intégration continue, jusqu'au déploiement final sur les stores (Google Play, etc.).
+<br><br>
+<u>Technologies utilisées :</u> <b>Flutter, Dart, Firebase, Cloud Functions, Machine Learning</b>
+            </p>
+            <div style="text-align: center; margin-top: 30px">
+                <a href="#"><img class="portfolio" src="FindYourCNI (3).png" alt="Aperçu FindYourCNI"></a>
+                <br><br>
+                <a href="https://play.google.com/store/apps/details?id=com.findyourcni.app" target="_blank" rel="noopener" class="portfolio-link" style="font-size: 16px; padding: 10px 24px; border: 2px solid #87CEEB; border-radius: 30px;">▶ Disponible sur Google Play</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>L'ange Beluis</h3>
+                    <p class="footer-tagline">Développeur mobile &amp; web freelance</p>
+                    <p class="footer-description">Je transforme vos idées en solutions digitales innovantes et performantes.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#about">À propos</a></li>
+                        <li><a href="index.html#skills">Compétences</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#portfolio">Applications mobiles</a></li>
+                        <li><a href="index.html#portfolio">Développement web</a></li>
+                        <li><a href="index.html#portfolio">Consultation</a></li>
+                        <li><a href="index.html#portfolio">Formation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connectez-vous</h4>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@langebeluis" target="_blank" rel="noopener" title="Chaîne YouTube" class="social-icon">
+                            <img src="youtube.jpg" alt="YouTube" class="social-img">
+                        </a>
+                        <a href="mailto:contact@beluis.com" title="Envoyer un email" class="social-icon">
+                            <img src="gmail.png" alt="Email" class="social-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024–2026 L'ange Beluis. Tous droits réservés. | Conception &amp; Développement par L'ange Beluis</p>
+            </div>
+        </div>
+    </footer>  
+    <script>
+        // Scroll Reveal Script
+        const reveals = document.querySelectorAll('.reveal, .portfolio-item, .contact-form, .about-container, .skills-grid .skill, .texte-avec-ligne-verticale');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach((reveal) => {
+            observer.observe(reveal);
+        });
+    </script>
+</body>
+</html>

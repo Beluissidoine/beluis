@@ -3,72 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'ange Beluis</title>
+    <title>L'ange Beluis — Développeur mobile & web freelance</title>
+    <meta name="description" content="Développeur mobile & web freelance spécialisé en Flutter, Django, Python. Développement, maintenance, sécurité, conseil & accompagnement.">
+    <meta name="author" content="L'ange Beluis">
+    <meta name="keywords" content="développeur, flutter, django, python, web, mobile, freelance, beluis">
+    <meta name="theme-color" content="#1F2833">
+    <meta property="og:title" content="L'ange Beluis - Développeur mobile & web">
+    <meta property="og:description" content="Développeur mobile & web freelance spécialisé en Flutter, Django, Python.">
+    <meta property="og:image" content="https://beluis.com/og-image.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="me" href="https://www.youtube.com/@langebeluis">
+    <link rel="canonical" href="https://beluis.com">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="profile.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- Using a more modern FontAwesome or specific Flutter class if devicons failing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "L'ange Beluis",
+        "jobTitle": "Développeur mobile & web",
+        "url": "https://beluis.com",
+        "email": "contact@beluis.com",
+        "sameAs": ["https://www.youtube.com/@langebeluis"],
+        "knowsAbout": ["Flutter", "Dart", "Django", "Python", "Firebase", "HTML5", "CSS3", "JavaScript", "C", "Kivy"]
+    }
+    </script>
 </head>
 <body>
-    <!-- COUVERTURE -->
-    <div class="cover">
-        <img class="cover-profile" src="profile3.png"/>
-        <h1>L'ange Beluis</h1>
-        <p>Développeur Freelance | 6 ans d'expérience</p>
-        
-        <div style="text-align: center;">
-            <a class="contact-button" href="mailto:ghislainbella3@gmail.com">ME CONTACTER</a>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">L'ange Beluis</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li class="nav-item" role="none"><a href="#home" class="nav-link" role="menuitem">Accueil</a></li>
+                <li class="nav-item" role="none"><a href="#about" class="nav-link" role="menuitem">À propos</a></li>
+                <li class="nav-item" role="none"><a href="#skills" class="nav-link" role="menuitem">Compétences</a></li>
+                <li class="nav-item" role="none"><a href="#portfolio" class="nav-link" role="menuitem">Portfolio</a></li>
+                <li class="nav-item" role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+            </ul>
         </div>
-        <div class="cover-contact">
-            <p><a href="mailto:ghislainbella3@gmail.com">ghislainbella3@gmail.com</a></p>
-            <p><a href="tel:+237659828615">59 82 85 15</a></p>
+    </nav>
+
+    <!-- COUVERTURE -->
+    <div id="home" class="cover">
+        <img class="cover-profile" src="logo_transparent.png" alt="Logo L'ange Beluis" loading="lazy"/>
+        <h1>L'ange Beluis</h1>
+        <p class="tagline">Développeur mobile &amp; web</p>
+        
+        <div class="cover-cta">
+            <a class="contact-button" href="#contact">ME CONTACTER</a>
         </div>
     </div>
 
     <!-- SECTION GRISE 1 -->
-    <div class="section section-grise1">
+    <section class="section section-grise1">
         <div class="separateur"></div>
         <p>Je développe <b>votre projet WEB</b> ou vos <b>Applications mobiles</b> iOS/Android de A à Z</p>
-    </div>
+    </section>
 
     <!-- SECTION BLANCHE -->
-    <div class="section">
-        <h2>En savoir plus</h2>
-        <img src="profile2.jpg" class="col-contenu"/>
-        <div class="col-contenu float-right">
-            <div class="texte-avec-ligne-verticale">
-                <p>Passionné par la programmation depuis le plus jeune age, je suis maintenant développeur professionnel avec plus de 6 ans d’expérience.<br><br>
-                    Expert dans les domaines du <b>web</b> et des <b>applications mobiles</b>, je propose mes services personnalisés pour des missions freelance.</p>
-                <a href="https://www.facebook.com/profile.php?id=100075797140595" target="_blank">En savoir plus sur mon profil</a>
+    <section id="about" class="section about-section">
+        <h2>À propos de moi</h2>
+        <div class="about-container">
+            <img src="work.jpeg" class="col-contenu" alt="Photo de travail - développeur au clavier" loading="lazy"/>
+            <div class="col-contenu float-right">
+                <div class="about-content">
+                    <div class="texte-avec-ligne-verticale">
+                        <p>Développeur mobile & web, passionné par l'impact social à travers la technologie.</p>
+                        <p>Finaliste et lauréat de plusieurs compétitions d'innovation, j'ai notamment obtenu le 2ème Prix du Orange Summer Challenge 2024 ainsi que le Prix Spécial Féminin 2024, pour le projet Sipoh, une solution numérique dédiée à la santé et l'éducation des jeunes.</p>
+                        <p>Avec plus de 6 ans d'expérience en développement, je conçois et réalise des applications performantes, sécurisées et élégantes, de l'idée jusqu'au déploiement sur Android & iOS.</p>
+                        <p>Formé et certifié en Flutter & Dart, j'accorde une attention particulière à l'expérience utilisateur, à l'optimisation technique et à la fiabilité du code.</p>
+                        <p>Aujourd'hui, j'accompagne les entreprises, start-up et organisations qui souhaitent transformer une idée en produit digital concret :</p>
+                        <ul>
+                            <li>Applications mobiles (Flutter)</li>
+                            <li>Plateformes web modernes</li>
+                            <li>Intégration API & bases de données</li>
+                            <li>Conseil en architecture & stratégie produit</li>
+                        </ul>
+                        <p>Mon approche est simple : Comprendre votre vision, construire avec rigueur, livrer avec impact.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        
-    </div>
+
+    </section>
+
+    <!-- SECTION AWARDS -->
+    <section class="section section-light">
+        <h2>Récompenses &amp; Distinctions</h2>
+        <div class="cards">
+            <div class="card reveal">
+                <h3>Orange Summer Challenge 2024</h3>
+                <p>2e Prix — 1 050 000 FCFA</p>
+                <img src="osc.jpeg" class="card-img" alt="Trophée Orange Summer Challenge 2024 - 2e Prix pour le projet Sipoh" loading="lazy">
+            </div>
+            <div class="card reveal">
+                <h3>Prix Spécial Féminin</h3>
+                <p>Montant — 2 000 000 FCFA</p>
+                <img src="poesam.jpeg" class="card-img" alt="Certificat Prix Spécial Féminin - Récompense 2 000 000 FCFA" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION COMPETENCES -->
+    <section id="skills" class="section section-light">
+        <h2>Compétences techniques</h2>
+        <p class="intro-text">Voici les technologies que je maîtrise pour réaliser vos projets avec excellence.</p>
+        <div class="skills-grid">
+            <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" width="30" height="30" style="margin-bottom: 6px"/><span>Flutter</span></div>
+            <div class="skill"><i class="devicon-dart-plain"></i><span>Dart</span></div>
+            <div class="skill"><i class="devicon-firebase-plain"></i><span>Firebase</span></div>
+            <div class="skill"><i class="devicon-python-plain"></i><span>Python</span></div>
+            <div class="skill"><i class="devicon-django-plain"></i><span>Django</span></div>
+            <div class="skill"><i class="devicon-html5-plain"></i><span>HTML5</span></div>
+            <div class="skill"><i class="devicon-css3-plain"></i><span>CSS3</span></div>
+            <div class="skill"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+            <div class="skill"><i class="devicon-c-plain"></i><span>C</span></div>
+            <div class="skill"><div class="no-icon">Kivy</div><span>Python UI</span></div>
+        </div>
+    </section>
+
+    <!-- SECTION CERTIFICATIONS -->
+    <section class="section section-light">
+        <h2>Certifications</h2>
+        <div class="cards">
+            <div class="card reveal">
+                <h3>Udemy</h3>
+                <p>Flutter &amp; Dart - L'essentiel - Création d'apps iOS et Android (44h)</p>
+                <img src="udemy.jpg" class="card-img" alt="Certificat de complération Udemy : Flutter & Dart - L'essentiel (44 heures)" loading="lazy">
+            </div>
+            <div class="card reveal">
+                <h3>OpenClassrooms</h3>
+                <p>Introduction à jQuery</p>
+                <img src="certificate_example_page-0001.jpg" class="card-img" alt="Certificat OpenClassrooms : Introduction à jQuery" loading="lazy">
+            </div>
+        </div>
+    </section>
 
     <!-- SECTION GRISE 2 -->
-    <div class="section section-grise2">
+    <section id="portfolio" class="section section-grise2">
         <h2>Portfolio</h2>
-        <table class="col-portfolio" style="display:inline-block">
-            <tr>
-                <td><div class="barre-verticale"></div></td>
-                <td style="width:100%;"><a href="portfolio-site-restaurant.html"><img style="width:100%" src="project1small.jpg"></a></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td align="center"><a href="portfolio-site-restaurant.html">Site web pour un restaurant</a></td>
-            </tr>
-        </table>
-        <table  class="col-portfolio float-right">
-            <tr>
-                <td><div class="barre-verticale"></div></td>
-                <td style="width:100%;"><a href="portfolio-application-mobile-ai.html"><img style="width:100%" src="project2small.jpg"></a></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td align="center"><a href="portfolio-application-mobile-ai.html">Application mobile "Intelligence artificielle"</a></td>
-            </tr>
-        </table>
-    </div>
+        <p class="intro-text">Découvrez quelques-uns de mes projets les plus marquants, primés et développés avec les meilleures pratiques.</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-content">
+                    <div class="barre-verticale"></div>
+                    <div class="portfolio-text">
+                        <h3><a href="portfolio-sipoh.html">Sipoh</a></h3>
+                        <p>Kit intelligent d'aide aux personnes en situation de vulnérabilité</p>
+                        <p class="portfolio-award">🏆 Orange Summer Challenge 2024 — 2e Prix</p>
+                        <p class="portfolio-tech"><strong>Tech :</strong> Flutter, Dart, Firebase, Django, Python</p>
+                        <a href="portfolio-sipoh.html" class="portfolio-link">Voir le projet →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <div class="portfolio-content">
+                    <div class="barre-verticale"></div>
+                    <div class="portfolio-text">
+                        <h3><a href="portfolio-findyourcni.html">FindYourCNI</a></h3>
+                        <p>Application mobile collaborative pour déclarer et retrouver des CNI (Cartes Nationales d'Identité) perdues.</p>
+                        <p class="portfolio-tech"><strong>Tech :</strong> Flutter, Dart, Firebase, GCP</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.findyourcni.app" target="_blank" rel="noopener" class="portfolio-link" style="margin-right: 12px;">Google Play ↗</a>
+                        <a href="portfolio-findyourcni.html" class="portfolio-link">Voir le projet →</a>
+                    </div>
+                </div>
+            </div>
 
-    <!-- SECTION BLANCHE FRAME -->
-    <iframe src="contact-frame.html" scrolling="no"/>
+            <div class="portfolio-item">
+                <div class="portfolio-content">
+                    <div class="barre-verticale"></div>
+                    <div class="portfolio-text">
+                        <h3><a href="portfolio-bot-beluis.html">Bot IA WhatsApp</a></h3>
+                        <p>Assistant intelligent sur WhatsApp propulsé par l'IA (Ollama) avec interface d'administration Web.</p>
+                        <p class="portfolio-tech"><strong>Tech :</strong> Node.js, WhatsApp Web.js, Ollama</p>
+                        <a href="portfolio-bot-beluis.html" class="portfolio-link">Voir le projet →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact" class="section section-light">
+        <h2>Contactez-moi</h2>
+        <p class="intro-text">Prêt à donner vie à votre projet ? Envoyez-moi un message et discutons-en !</p>
+        <form action="https://formspree.io/f/xpznqkgj" method="POST" class="contact-form">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>L'ange Beluis</h3>
+                    <p class="footer-tagline">Développeur mobile &amp; web freelance</p>
+                    <p class="footer-description">Je transforme vos idées en solutions digitales innovantes et performantes.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#contact">Applications mobiles</a></li>
+                        <li><a href="#contact">Développement web</a></li>
+                        <li><a href="#contact">Consultation</a></li>
+                        <li><a href="#contact">Formation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connectez-vous</h4>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@langebeluis" target="_blank" rel="noopener" title="Chaîne YouTube" class="social-icon">
+                            <img src="youtube.jpg" alt="YouTube" class="social-img" loading="lazy">
+                        </a>
+                        <a href="mailto:contact@beluis.com" title="Envoyer un email" class="social-icon">
+                            <img src="gmail.png" alt="Email" class="social-img" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024–2026 L'ange Beluis. Tous droits réservés. | Conception &amp; Développement par L'ange Beluis</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Hamburger Menu Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        // Scroll Reveal
+        const reveals = document.querySelectorAll('.reveal, .portfolio-item, .contact-form, .about-container, .skills-grid .skill, .texte-avec-ligne-verticale');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach((reveal) => {
+            observer.observe(reveal);
+        });
+    </script>
 </body>
 </html>

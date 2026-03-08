@@ -4,31 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+        }
+        .contact-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: transparent;
+        }
+        .contact-wrapper h3 {
+            text-align: center;
+            color: #1F2833;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #1F2833;
+            font-size: 14px;
+        }
+        form input, form textarea {
+            padding: 12px 14px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 14px;
+            background-color: #fff;
+            color: #1F2833;
+            transition: border-color 0.3s ease;
+        }
+        form input:focus, form textarea:focus {
+            outline: none;
+            border-color: #87CEEB;
+            box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        form button {
+            background-color: #87CEEB;
+            color: #1F2833;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        form button:hover {
+            background-color: #5aaced;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+        form button:active {
+            transform: translateY(0);
+        }
+        .contact-email {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .contact-email a {
+            color: #87CEEB;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .contact-email a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="section">
-        <div class="separateur display-mobile" style="margin-bottom:15px;"></div>
-    <div class="frame">
-        <p class="frame-title">Parlons de votre projet</p>
-        <table style="width: 100%">
-            <tr>
-                <td valign="top" align="center"><img src="profile.png"></td>
-                <td>
-                    <div class="texte-avec-ligne-verticale"
-                    style="margin-left: 20px">
-                        <p>
-                            Besoin de discuter de votre projet 
-                            et obtenir l’avis d’un expert ?
-                            <br><br>
-                            <a href="mailto:ghislainbella3@gmail.com">Contactez moi par email</a> ou directement
-                            par téléphone au <a href="tel:+237659828615">59 82 85 15</a>
-
-                        </p>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
+    <div class="contact-wrapper">
+        <h3>Contactez-moi</h3>
+        
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div>
+                <label for="name">Nom *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div>
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit">Envoyer</button>
+        </form>
+        
+        <div class="contact-email">
+            Ou écrivez directement à : <a href="mailto:contact@beluis.com">contact@beluis.com</a>
+        </div>
     </div>
-</div>
 </body>
+</html>

@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Mobile</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- HEADER -->
     <div class="portfolio-header">
-        <div class="texte-avec-ligne-verticale"
-        style="margin-left: 16px; margin-top: 22px; height: 45px">
-            <p class="portfolio-header-title">L'ange Beluis</p>
-        </div>
-        <a class="contact-button"
-            style="position: absolute; right: 20px; top:5px;"
-        href="mailto:ghislainbella3@gmail.com">ME CONTACTER</a>
-
+        <p class="portfolio-header-title">L'ange Beluis</p>
+        <a class="contact-button contact-button-portfolio"
+           href="mailto:contact@beluis.com">ME CONTACTER</a>
     </div>
 
     <!-- SECTION GRISE TITRE -->
@@ -32,16 +30,15 @@
     <div class="section">
         <div class="texte-avec-ligne-verticale">
             <p>
-                J’ai réalisé ce projet web pour un client travaillant dans le domaine de la restauration.
-                <br><br>
-                L’objectif ? Permettre à ce restaurant de gagner en visibilité et de proposer son menu de pizzas aux utilisateurs.
-                <br><br>
-                Mon client, étant novice dans les nouvelles technologies, à la possibilité de modifier facilement son menu en ligne grâce à une interface d’administration sur-mesure que j’ai réalisé.
-                <br><br>
-                Ce projet simple mais fonctionnel a donné entière satisfaction à mon client.
-                <br><br>
-                <u>Technologies utilisées :</u> <b>HTML, CSS, DJANGO, PYTHON, PYTHONANYWHERE</b>
-
+J'ai réalisé ce projet web pour un client travaillant dans le domaine de la restauration.
+<br><br>
+L'objectif ? Permettre à ce restaurant de gagner en visibilité et de proposer son menu de pizzas aux utilisateurs.
+<br><br>
+Mon client, étant novice dans les nouvelles technologies, à la possibilité de modifier facilement son menu en ligne grâce à une interface d'administration sur-mesure que j'ai réalisé.
+<br><br>
+Ce projet simple mais fonctionnel a donné entière satisfaction à mon client.
+<br><br>
+<u>Technologies utilisées :</u> <b>HTML, CSS, DJANGO, PYTHON, PYTHONANYWHERE</b>
             </p>
             <div style="text-align: center; margin-top: 30px">
                 <a href="https://ghislainbeluis.pythonanywhere.com/"><img class="portfolio" src="project2.jpg"></a>
@@ -51,6 +48,67 @@
     </div>
 
     <!-- FRAME -->
-        <iframe src="contact-frame.html" scrolling="no"/>  
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>L'ange Beluis</h3>
+                    <p class="footer-tagline">Développeuse mobile &amp; web freelance</p>
+                    <p class="footer-description">Je transforme vos idées en solutions digitales innovantes et performantes.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#about">À propos</a></li>
+                        <li><a href="index.html#skills">Compétences</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#portfolio">Applications mobiles</a></li>
+                        <li><a href="index.html#portfolio">Développement web</a></li>
+                        <li><a href="index.html#portfolio">Consultation</a></li>
+                        <li><a href="index.html#portfolio">Formation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connectez-vous</h4>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@langebeluis" target="_blank" rel="noopener" title="Chaîne YouTube" class="social-icon">
+                            <img src="youtube.jpg" alt="YouTube" class="social-img">
+                        </a>
+                        <a href="mailto:contact@beluis.com" title="Envoyer un email" class="social-icon">
+                            <img src="gmail.png" alt="Email" class="social-img">
+                        </a>
+                    </div>
+                    <a href="index.html" class="footer-cta">RETOUR À L'ACCUEIL</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 L'ange Beluis. Tous droits réservés. | Conception &amp; Développement par L'ange Beluis</p>
+            </div>
+        </div>
+    </footer>  
+    <script>
+        // Scroll Reveal Script
+        const reveals = document.querySelectorAll('.reveal, .portfolio-item, .contact-form, .about-container, .skills-grid .skill, .texte-avec-ligne-verticale');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach((reveal) => {
+            observer.observe(reveal);
+        });
+    </script>
 </body>
 </html>
