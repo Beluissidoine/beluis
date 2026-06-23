@@ -1,0 +1,94 @@
+.preloader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #010101; /* Noir absolu */
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Transition extrêmement luxueuse pour la disparition */
+  transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+  transform-origin: top;
+  will-change: transform;
+}
+
+/* L'animation de glissement vers le haut (rideau) */
+.preloader-wrapper.slide-up {
+  transform: translateY(-100%);
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.preloader-logo-container {
+  width: 180px;
+  height: auto;
+  position: relative;
+}
+
+.preloader-logo {
+  width: 100%;
+  height: auto;
+  opacity: 0.1;
+  filter: drop-shadow(0 0 0 rgba(227, 6, 19, 0));
+  transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* L'illumination / The Glow */
+.preloader-logo.glow {
+  opacity: 1;
+  filter: drop-shadow(0 0 25px rgba(227, 6, 19, 0.8)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.2));
+  transform: scale(1.05);
+}
+
+.preloader-counter-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 200px;
+}
+
+.preloader-counter {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 2px;
+}
+
+.preloader-bar-bg {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader-bar-fill {
+  height: 100%;
+  background: var(--color-red);
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* Glow sur la barre */
+  box-shadow: 0 0 10px rgba(227, 6, 19, 0.8);
+  transition: width 0.1s linear;
+}
+
+@media (max-width: 600px) {
+  .preloader-logo-container {
+    width: 140px;
+  }
+  .preloader-counter-wrapper {
+    width: 150px;
+  }
+}

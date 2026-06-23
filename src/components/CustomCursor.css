@@ -1,0 +1,42 @@
+/* Cacher le curseur par défaut globalement */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  margin-top: -18px; /* Offset to center */
+  margin-left: -18px;
+  will-change: transform, border-color, background-color;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* État Hover sur les boutons/liens */
+.cursor-ring.hovering {
+  border-color: rgba(227, 6, 19, 0.5); /* Rouge transparent */
+  background-color: rgba(227, 6, 19, 0.05);
+}

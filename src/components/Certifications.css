@@ -1,0 +1,104 @@
+.cert-section {
+  position: relative;
+  z-index: 1;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.cert-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  margin: 60px 0;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  height: 100%;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(227, 6, 19, 0.15);
+  border-color: rgba(227, 6, 19, 0.25);
+}
+
+.cert-img-wrapper {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cert-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.cert-card:hover .cert-img {
+  transform: scale(1.05);
+}
+
+.cert-content {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cert-type {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-red);
+  margin-bottom: 12px;
+}
+
+.cert-title {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.cert-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Classes de reveal supprimées, on utilise le .reveal global */
+
+@media (max-width: 600px) {
+  .cert-img-wrapper {
+    height: 180px;
+  }
+  
+  .cert-content {
+    padding: 20px 15px;
+  }
+  
+  .cert-title {
+    font-size: 1.15rem;
+  }
+}

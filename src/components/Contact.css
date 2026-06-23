@@ -1,0 +1,157 @@
+.contact-oversized {
+  position: relative;
+  z-index: 1;
+  padding: 150px 0 100px;
+  overflow: hidden;
+}
+
+.contact-oversized-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-red);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* The Huge Link Wrapper */
+.contact-huge-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 60px;
+}
+
+.contact-huge-text-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-huge-text {
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 10vw, 10rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--color-white);
+  position: relative;
+  white-space: nowrap;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Effet Outline to Solid Fill on Hover */
+.contact-huge-link:hover .contact-huge-text {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+}
+
+.contact-huge-link .contact-huge-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  color: var(--color-red);
+  -webkit-text-stroke: 0px transparent;
+  overflow: hidden;
+  transition: width 0.7s cubic-bezier(0.85, 0, 0.15, 1);
+  white-space: nowrap;
+}
+
+.contact-huge-link:hover .contact-huge-text::before {
+  width: 100%;
+}
+
+.contact-arrow-wrapper {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  color: var(--color-red);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-huge-link:hover .contact-arrow-wrapper {
+  opacity: 1;
+  transform: translateY(-50%) rotate(0deg) translate(20px, -20px);
+}
+
+/* Footer Info inside Contact */
+.contact-info-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 40px;
+  width: 100%;
+}
+
+.contact-email {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-white);
+  transition: color 0.3s ease;
+}
+
+.contact-email:hover {
+  color: var(--color-red);
+}
+
+.contact-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-arrow-wrapper {
+    display: none; /* Hide on smaller screens as it overflows */
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-oversized {
+    padding: 100px 0 60px;
+  }
+  .contact-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+  .contact-email {
+    font-size: 1.2rem;
+  }
+}
