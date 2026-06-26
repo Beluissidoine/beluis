@@ -32,8 +32,9 @@ const Hero = () => {
   useEffect(() => {
     // Dupliquer le contenu pour le défilement infini du marquee
     const el = marqueeRef.current;
-    if (el) {
+    if (el && !el.dataset.duplicated) {
       el.innerHTML += el.innerHTML;
+      el.dataset.duplicated = "true";
     }
   }, []);
 
@@ -56,8 +57,13 @@ const Hero = () => {
             L'expert qu'il vous faut pour que votre projet <span className="text-red-gradient">prenne vie.</span>
           </h1>
 
+          <p className="hero-tagline">
+            Design, développement web & mobile haute performance. <br/>
+            Nous transformons vos ambitions en expériences numériques remarquables.
+          </p>
+
           <div className="hero-cta-row">
-            <a href="#contact" className="btn-primary" id="hero-cta-contact">
+            <a href="#contact" className="btn-primary btn-premium-glow" id="hero-cta-contact">
               Démarrer un projet <ArrowRight size={18} />
             </a>
             <a href="#portfolio" className="btn-ghost" id="hero-cta-portfolio">

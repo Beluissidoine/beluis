@@ -51,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${appLoaded ? 'app-loaded' : ''}`}>
       {/* L'écran de chargement qui va glisser vers le haut */}
       {!appLoaded && <Preloader onFinish={handlePreloaderFinish} />}
 

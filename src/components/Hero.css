@@ -11,7 +11,7 @@
   justify-content: center;
   overflow: hidden;
   padding-top: 80px;
-  background: var(--color-black);
+  background: transparent;
 }
 
 /* ---- Watermark géant ---- */
@@ -102,38 +102,50 @@
   50%       { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.07); }
 }
 
-/* Headline en 3 lignes */
+/* ========================
+   TEXT REVEAL (Premium Effect)
+   ======================== */
 .hero-headline {
-  display: flex;
-  flex-direction: column;
   font-family: var(--font-title);
   font-size: clamp(2.8rem, 6.5vw, 6rem);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.04em;
   margin-bottom: 32px;
-  animation: fadeUp 0.7s 0.1s ease both;
+  opacity: 0;
 }
 
-.hl-block {
-  display: block;
+/* L'animation se déclenche quand app-loaded est présent */
+.app-loaded .hero-headline {
+  animation: blurReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Texte plein blanc */
-.hl-solid {
-  color: var(--color-white);
+@keyframes blurReveal {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+    transform: scale(0.95) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1) translateY(0);
+  }
 }
 
-/* Texte en contour rouge — signature visuelle */
-.hl-outline {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--color-red);
-  transition: color 0.3s ease, -webkit-text-stroke 0.3s ease;
+.text-red-gradient {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-red) 0%, #ff4d4d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Effet de lueur pulsante sur le texte rouge */
+  animation: redGlow 3s ease-in-out infinite alternate;
 }
 
-.hl-outline:hover {
-  color: var(--color-red);
-  -webkit-text-stroke-color: transparent;
+@keyframes redGlow {
+  0% { filter: drop-shadow(0 0 5px rgba(227, 6, 19, 0.2)); }
+  100% { filter: drop-shadow(0 0 20px rgba(227, 6, 19, 0.6)); }
 }
 
 /* Tagline */
@@ -142,7 +154,33 @@
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.7;
   margin-bottom: 44px;
-  animation: fadeUp 0.7s 0.2s ease both;
+  opacity: 0;
+}
+
+.app-loaded .hero-tagline {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+/* CTA */
+.hero-cta-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+
+.app-loaded .hero-cta-row {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+
+
+/* Tagline */
+.hero-tagline {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin-bottom: 44px;
 }
 
 /* CTA */
@@ -153,25 +191,47 @@
   animation: fadeUp 0.7s 0.3s ease both;
 }
 
-.btn-primary {
+.btn-premium-glow {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 28px;
-  background: var(--color-red);
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--color-red) 0%, #ff4d4d 100%);
   color: var(--color-white);
-  border-radius: 8px;
+  border-radius: 12px;
   font-family: var(--font-title);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
-  transition: all 0.25s ease;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(227, 6, 19, 0.3);
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(227, 6, 19, 0.4);
+.btn-premium-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%);
+  transform: scale(0);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn-premium-glow:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(227, 6, 19, 0.5), 0 0 20px rgba(227, 6, 19, 0.3);
+}
+
+.btn-premium-glow:hover::before {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .btn-ghost {
@@ -396,7 +456,7 @@
   }
 
   .hero-headline {
-    font-size: clamp(2.3rem, 12vw, 3.2rem);
+    font-size: clamp(2.3rem, 11vw, 3rem);
     margin-bottom: 22px;
   }
 
@@ -414,7 +474,7 @@
     gap: 12px;
   }
 
-  .btn-primary, .btn-ghost {
+  .btn-premium-glow, .btn-ghost {
     width: 100%;
     justify-content: center;
     padding: 15px 20px;

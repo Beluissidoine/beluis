@@ -48,7 +48,7 @@ const projects = [
     award: '🏆 Orange Summer Challenge 2024 — 2e Prix',
     tech: ['Flutter', 'Dart', 'Firebase', 'Django', 'Python'],
     image: '/assets/sipoh.jpg',
-    links: { demo: '#' }
+    links: { demo: 'https://sipoh.tech/' }
   },
   {
     id: 2,
